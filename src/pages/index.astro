@@ -1,5 +1,8 @@
 ---
-
+import KnapIndlaes from "../components/Knap_indlaes.astro";
+import KnapKurv from "../components/Knap_kurv.astro";
+import Nyhedsbrev from"../components/Nyhedsbrev.astro";
+import Filtering from"../components/Filtrering.astro";
 ---
 
 <html lang="en">
@@ -9,8 +12,21 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<h1>Astro</h1>
+		<KnapIndlaes/>
+		<KnapKurv/>
+		<Nyhedsbrev/>
+		<Filtering/>
+
 	</body>
+	<style>
+		body{
+			background-color: #FFFBF6;
+		}
+	</style>
 </html>
