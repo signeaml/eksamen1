@@ -26,4 +26,11 @@ body {
 
 h1 {
   color: var(--farve1);
+  font-family: "Inter", sans-serif;
+  font-size: 50px;
+  text-align: center;
+}
+p {
+  color: var(--farve1);
+  font-family: "Inter", sans-serif;
 }
