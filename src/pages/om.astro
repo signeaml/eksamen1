@@ -1,6 +1,10 @@
 ---
 import Layout from "../Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
 ---
+
 
 <Layout>
     <div class="grid_1_1_1">
@@ -18,8 +22,18 @@ import Layout from "../Layout.astro";
         <img src="medier/krudsedulle4.svg" alt="">
     </div>
     </div>
+    <div class="grid_1_1_1">
+        <p>SKITSE er et indblik i kunstens verden, som man ikke får andre steder. Vi sælger kunstneres skitser, eksperimenter og forsøg, fordi vi mener, at de udgør en vigtig del af kunsten selv. Gennem skitserne får man unik adgang til de kunstneriske arbejdsprocesser, og vi håber dermed, at SKITSE er med til at gøre kunsten tilgængelig for flere.
+ 
+            Vores skitser udvælges i samarbejde med kunstnerne på deres atelierer og indrammes i hånden i vores butik. Med to rammeformater og tre priser, vil vi gøre det let for dig at købe kunst.</p>
+   <img src="medier/om_galleri1" alt="">
+   <img src="medier/om_galleri2" alt="">
+   <img src="medier/om_galleri3" alt="">
+   <img src="medier/om_galleri4" alt="">
+        </div>
 
 </Layout>
+
 
 <style>
     .grid_1_1_1{
@@ -30,4 +44,16 @@ import Layout from "../Layout.astro";
 		}
 		.grid_1_1_1 img{
 			width: 70%;
+        }
+        .om_skitse p{
+			font-size: 22px;
+		width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 30px;
+		margin-bottom: 70px;
+		}
+        h1{
+            margin-top: 100px;
+        }
 </style>
