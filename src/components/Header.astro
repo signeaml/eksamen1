@@ -3,24 +3,26 @@
 <header>
     <div class="navbar">
         <a href="index.astro">
-            <img src="billeder/logo" alt="Logo" class="logo">
+            <img src="medier/logo.svg" alt="Logo" class="logo">
         </a>
         <ul class="nav-menu">
-            <li><a href="skitser">Skitser</a></li>
-            <li><a href="kunstnere">Kunstnere</a></li>
-            <li><a href="events">Events</a></li>
-            <li><a href="om">Om os</a></li>
-            <a href="om"><li>Om os</li></a>
+            <li><a href="skitser.astro">Skitser</a></li>
+            <li><a href="merch.astro">Merch</a></li>
+            <li><a href="kunstnere.astro">Kunstnere</a></li>
+            <li><a href="events.astro">Events</a></li>
+            <li><a href="om.astro">Om os</a></li>
         </ul>
-        <div class="actions">
-            <img src="billeder/likede" alt="gemte" />
-            <img src="billeder/kurv" alt="kurv">
-        </div>
-        <div class="burgermenu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+        <div class="menu_header">
+          <div class="actions">
+              <img src="medier/gemte.svg" alt="gemte" id="gemte" />
+              <img src="medier/kurv.svg" alt="kurv">
+          </div>
+          <div class="burgermenu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
+      </div>
     </div>
 </header>
 
@@ -35,20 +37,25 @@ header {
 }
 
 .logo {
-  width: 20px;
+  width: 40px;
 }
 
 .actions {
   display: flex;
+  gap: 10px;
+}
+
+.menu_header {
+  display: flex;
+  gap: 20px;
 }
 
 .navbar {
-  min-height: 70px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  align-items: center;
+  padding: 0 20px;
+  font-family: "Paytone One", sans-serif;
 }
 
 .nav-menu {
@@ -86,18 +93,6 @@ header {
   cursor: pointer;
 }
 
-.burgermenu.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.burgermenu.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.burgermenu.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
 .bar {
   display: block;
   width: 25px;
@@ -105,6 +100,16 @@ header {
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
   background-color: var(--farve1);
+}
+
+.burgermenu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.burgermenu.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.burgermenu.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 @media (min-width: 800px) {
@@ -116,7 +121,7 @@ header {
     position: static;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 70px;
     font-size: 18px;
@@ -151,14 +156,21 @@ header {
   }
 }
 </style>
-
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const burgerMenu = document.querySelector('.burgermenu');
-        const navMenu = document.querySelector('.nav-menu');
+            const burgermenu = document.querySelector(".burgermenu");
+            const navMenu = document.querySelector(".nav-menu");
 
-        burgerMenu.addEventListener('click', function () {
-            navMenu.classList.toggle('active');
+            burgermenu.addEventListener("click", () => {
+                burgermenu.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            });
+
+            document.querySelectorAll(".nav-menu a").forEach((n) =>
+                n.addEventListener("click", () => {
+                    burgermenu.classList.remove("active");
+                    navMenu.classList.remove("active");
+                })
+            );
         });
-    });
 </script>
