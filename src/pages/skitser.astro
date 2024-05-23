@@ -1,0 +1,41 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Filtering from"../components/Filtrering.astro";
+import Layout from "../Layout.astro";
+import CardSkitse from "../components/Card_skitse.astro";
+
+const response = await fetch(
+  "https://edmdwdbbleydenvducsr.supabase.co/rest/v1/skitse?select=*",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkbWR3ZGJibGV5ZGVudmR1Y3NyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MTk3MDQsImV4cCI6MjAzMTE5NTcwNH0.FuI_0k2FhT6bryNsIK2YrNwfo_XJGqVMm9bbVrtxHrU",
+    },
+  }
+);
+const data = await response.json();
+
+
+
+---
+
+// hent data fra supabase
+
+
+<Layout>
+    <h1>Skitser</h1>
+
+<div class="grid_1_1_1">
+    <CardSkitse />
+
+</div>
+</Layout>
+
+<style>
+    .grid_1_1_1{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+</style>
