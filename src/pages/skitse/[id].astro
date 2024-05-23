@@ -1,4 +1,5 @@
 ---
+//@ts-nocheck
 import Layout from "../../Layout.astro";
 export async function getStaticPaths() {
   const response = await fetch(
@@ -7,8 +8,7 @@ export async function getStaticPaths() {
       method: "GET",
       headers: {
         apikey:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4cW5ramR5enR4Y2J5c3F1Z3NhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA3NjI4NTEsImV4cCI6MjAyNjMzODg1MX0.YxIUs_uwIdOwvu_Pn862bqcGegvtfDP99P_My1r3phU",
-      },
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkbWR3ZGJibGV5ZGVudmR1Y3NyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MTk3MDQsImV4cCI6MjAzMTE5NTcwNH0.FuI_0k2FhT6bryNsIK2YrNwfo_XJGqVMm9bbVrtxHrU"},
     }
   );
   const data = await response.json();
@@ -21,18 +21,20 @@ const { data } = Astro.props;
 console.log(data);
 ---
           
-
+<Layout>
 <article>
 <div class="grid-1.1">
 <div><img src="{`/skitse-img` + data.skitse-img}" alt="Billede af skitsen">
 </div>
 <div>
-    <h3>{data.kunstner}</h3>
-    <h3>{data.navn}</h3>
-    <h3>{data.maal}</h3>
-    <p>{data.pris}</p>
+    <h3 class="kunstner_skitse">{data.kunstner}</h3>
+    <h3 class="navn_skitse">{data.navn}</h3>
+    <h3 class="maal_skitse">{data.maal}</h3>
+    <p class="pris_skitse">{data.pris}</p>
+    <Knap_kurv />
 </div>
 
 </div>
 
 </article>
+</Layout>
