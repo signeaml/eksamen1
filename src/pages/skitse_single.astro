@@ -1,6 +1,6 @@
 ---
 import Layout from "../Layout.astro";
-//import Skitse from "../src/pages/skitse/[id].astro";
+import Skitse from "../pages/skitse/[id].astro";
 const response = await fetch(
     "https://edmdwdbbleydenvducsr.supabase.co/rest/v1/skitse?select=*",
     {
@@ -29,7 +29,7 @@ const response = await fetch(
       {
         data.map((skitse) => {
           return (
-            <skitse
+            <Skitse
               navn={skitse.navn}
               pris={skitse.pris}
               maal={skitse.maal}
