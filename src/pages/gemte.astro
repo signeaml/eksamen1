@@ -1,0 +1,120 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../Layout.astro";
+import KnapKurv from "../components/Knap_kurv.astro";
+import "/src/styles/general.css";
+---
+
+<Layout>
+  <h1>Gemte skitser</h1>
+
+  <div class="grid_1_1_1">
+    <div class="gemte">
+      <img src="/medier/gemt1.webp" alt="likede billeder" />
+      <p>Peter Vos Knude</p>
+      <div class="info">
+        <p class="størrelse">29,6 x 42 cm</p>
+        <p class="pris">2.499 kr</p>
+      </div>
+      <KnapKurv />
+    </div>
+
+    <div class="gemte">
+      <img src="/medier/gemt2.webp" alt="likede billeder" />
+      <p>Agnete Bertram</p>
+      <div class="info">
+        <p class="størrelse">37 x 29 cm</p>
+        <p class="pris">2.499 kr</p>
+      </div>
+      <KnapKurv />
+    </div>
+
+    <div class="gemte">
+      <img src="/medier/gemt3.webp" alt="likede billeder" />
+      <p>Peter Vos Knude</p>
+      <div class="info">
+        <p class="størrelse">20,9 x 29,6 cm</p>
+        <p class="pris">2.499 kr</p>
+      </div>
+      <KnapKurv />
+    </div>
+
+    <div class="gemte">
+      <img src="/medier/gemt4.webp" alt="likede billeder" />
+      <p>Johanne Rude</p>
+      <div class="info">
+        <p class="størrelse">19 x 27 cm</p>
+        <p class="pris">2.499 kr</p>
+      </div>
+      <KnapKurv />
+    </div>
+
+    <div class="gemte">
+      <img src="/medier/gemt5.webp" alt="likede billeder" />
+      <p>Ditte Marie Frost</p>
+      <div class="info">
+        <p class="størrelse">30 x 40 cm</p>
+        <p class="pris">2.499 kr</p>
+      </div>
+      <KnapKurv />
+    </div>
+
+    <div class="gemte">
+      <img src="/medier/gemt5.webp" alt="likede billeder" />
+      <p>Moa Alskog</p>
+      <div class="info">
+        <p class="størrelse">29 x 38 cm</p>
+        <p class="pris">2.499 kr</p>
+      </div>
+      <KnapKurv />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  img {
+    padding-top: 100px;
+    width: 250px;
+  }
+
+  h1 {
+    padding-top: 50px;
+  }
+
+  .info p {
+    color: var(--farve1);
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 300px;
+    padding-top: 10px;
+    text-decoration: none;
+    padding-bottom: 20px;
+  }
+
+  .pris {
+    color: var(--farve3);
+  }
+
+  .størrelse {
+    color: var(--farve2);
+  }
+
+  .grid_1_1_1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  @media (min-width: 800px) {
+    .grid_1_1_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+    }
+  }
+</style>

@@ -1,0 +1,133 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../Layout.astro";
+---
+
+<Layout>
+  <h1>Kurv</h1>
+
+  <div class="grid_1_1_1">
+    <div>
+      <img src="medier/gemt1.webp" alt="billede af værk" />
+    </div>
+    <div class="info">
+      <h2>Peter Voss-Knude</h2>
+      <p class="pris">2.499 kr</p>
+      <p class="antal">1 stk</p>
+    </div>
+    <div>
+      <img class="kryds" src="medier/kryds.webp" alt="kryds" />
+    </div>
+  </div>
+
+  <hr class="overst" />
+
+  <div class="grid_1_1">
+    <div>
+      <p>Ordreværdi</p>
+      <p>Levering</p>
+      <p class="stor">TOTAL</p>
+    </div>
+    <div>
+      <p>2.499 DKK</p>
+      <p>50 DKK</p>
+      <p class="stor">2.549 DKK</p>
+    </div>
+  </div>
+
+  <hr class="nederst" />
+
+  <div class="knap">
+    <p>TIL BETALING</p>
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    padding-top: 50px;
+  }
+
+  h2 {
+    width: 180px;
+  }
+
+  .overst {
+    margin-top: 300px;
+  }
+
+  .nederst {
+    margin-top: 50px;
+  }
+
+  img {
+    width: 200px;
+    padding-left: 30px;
+  }
+
+  .grid_1_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 40px;
+  }
+
+  .grid_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 40px;
+    justify-items: center;
+  }
+
+  .grid_1_1 p {
+    font-weight: bold;
+  }
+  p.stor {
+    font-size: 18px;
+    padding-top: 13px;
+  }
+
+  .kryds {
+    width: 60px;
+  }
+
+  .pris {
+    color: var(--farve3);
+  }
+  .info {
+    padding-left: 30px;
+  }
+
+  .antal {
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Tilføj en lille smule skygge */
+    padding: 6px 20px; /* Juster padding efter behov */
+    font-weight: bold;
+    font-size: 16px; /* Juster skriftstørrelse efter behov */
+    text-align: center; /* Centrer teksten */
+    border-radius: 5px; /* Tilføjer afrundede hjørner, juster efter behov */
+    margin: 0; /* Fjern standard margin */
+
+    margin-top: 30px;
+  }
+
+  .knap {
+    display: grid;
+    justify-items: center;
+    width: 435px;
+    padding-left: 100px;
+  }
+
+  div.knap {
+    color: #293750;
+    background-color: #9dc4ff;
+    font-family: "Inter", sans-serif;
+    padding: 12px 25px;
+    font-size: 18px;
+    display: inline;
+  }
+
+  .knap div:hover {
+    color: #fffbf6;
+    background-color: #293750;
+  }
+</style>
