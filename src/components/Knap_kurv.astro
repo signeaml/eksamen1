@@ -2,20 +2,21 @@
 
 ---
 
-<div>Læg i kurv</div>
-
+<button class="button">Læg i kurv</button>
 <style>
-  div {
-    width: 80px;
-
-    color: #293750;
-    background-color: #9dc4ff;
-    padding: 20px 40px 20px 40px;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    display: inline;
+  .button {
+    background-color: var(--farve4); /* Lys blå farve */
+    color: var(--farve1); /* Sort tekst */
+    border: none; /* Ingen kant */
+    padding: 15px 32px; /* Puder omkring teksten */
+    text-align: center; /* Centrering af teksten */
+    text-decoration: none; /* Ingen tekstdekoration */
+    display: inline-block; /* Inline-block element */
+    font-size: 16px; /* Tekststørrelse */
+    margin: 4px 2px; /* Margin omkring knappen */
+    cursor: pointer; /* Skift cursor ved hover */
   }
-  div:hover {
+  .button:hover {
     color: #fffbf6;
     background-color: #293750;
   }
