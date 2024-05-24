@@ -22,6 +22,7 @@ import Footer from "../components/Footer.astro";
         <img src="medier/krudsedulle4.svg" alt="">
     </div>
     </div>
+    <h1>Konceptet</h1>
     <div class="grid_1_1_1_galleri">
         <p class="tekst">SKITSE er et indblik i kunstens verden, som man ikke får andre steder. Vi sælger kunstneres skitser, eksperimenter og forsøg, fordi vi mener, at de udgør en vigtig del af kunsten selv. Gennem skitserne får man unik adgang til de kunstneriske arbejdsprocesser, og vi håber dermed, at SKITSE er med til at gøre kunsten tilgængelig for flere.
  
@@ -47,7 +48,104 @@ import Footer from "../components/Footer.astro";
 
 
 <style>
+    p{
+        padding-top: 20px;
+    }
     .grid_1_1_1{
+			display: grid;
+			grid-template-columns: 1fr 3fr 1fr;
+
+		}
+		.grid_1_1_1 img{
+			width: 70%;
+            height: 400px;
+        }
+   
+        .om_skitse p{
+			font-size: 22px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 30px;
+
+		}
+        h1{
+            margin-top: 50px;
+        }
+        .grid_1_1_1_galleri{
+            display: grid;
+			grid-template-columns: 1fr 1fr;
+        margin-right: 10%;
+        margin-left: 10%;
+        gap: 20px;
+
+
+  
+        }
+        .grid_1_1_1_galleri img{
+            width: 100%;
+          
+        }
+        .tekst{
+            grid-column: 1/3;
+            grid-row: 1/2;
+            font-size: 22px;
+            width: 100%;
+        }
+        .om2{
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+        .om1{
+            grid-column: 1/2;
+            grid-row: 2/3;
+       
+        }
+        .om3{
+            grid-column: 2/3 ;
+            grid-row:2/3 ;
+            padding-top: 280px;
+        }
+        .om4{
+            grid-column: 1/2;
+            grid-row: 2/3;
+            padding-top: 300px;
+        }
+        .grid_1_1_1_oplysning{
+            display: grid;
+            grid-template-columns:1fr 1fr;
+            place-items: center;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .grid_1_1_1_oplysning img{
+            grid-column: 1/3;
+        }
+        .grid_1_1 img{
+            width: 400px;
+        }
+        .grid_1_1 p{
+            width: 80%;
+            font-size: 22px;
+            padding-bottom: 40px;
+        }
+        .grid_1_1{
+
+            margin-left: 10%;
+            margin-right: 10%;
+           margin-bottom: 50px;
+       
+        }
+        .hvem_er_vi{
+            text-align: start;
+            padding-left: 10%;
+         
+
+        }
+
+
+        @media (min-width: 800px){
+            .grid_1_1_1{
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
 			padding-top: 100px;
@@ -133,6 +231,5 @@ import Footer from "../components/Footer.astro";
             padding-bottom: 40px;
 
         }
-
-
+        }
 </style>
