@@ -1,9 +1,10 @@
 ---
-import "./styles/general.css";
+import "/src/styles/general.css";
 import Header from "./components/Header.astro";
 import Footer from "./components/Footer.astro";
 import Krusedulle from "./components/Krusedulle.astro";
 ---
+
 <html lang="da">
   <head>
     <meta charset="utf-8" />
@@ -11,28 +12,34 @@ import Krusedulle from "./components/Krusedulle.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="general.css" />
     <title>Astro</title>
   </head>
   <body>
     <header>
-<Header/>
+      <Header />
     </header>
 
     <slot />
 
-    <Krusedulle/>
+    <Krusedulle />
 
     <footer>
-<Footer/>
+      <Footer />
     </footer>
   </body>
 </html>

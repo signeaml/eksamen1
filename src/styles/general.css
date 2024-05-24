@@ -30,6 +30,10 @@ h1 {
   font-size: 50px;
   text-align: center;
 }
+h2 {
+  color: var(--farve1);
+  font-family: "Inter", sans-serif;
+}
 p {
   color: var(--farve1);
   font-family: "Inter", sans-serif;

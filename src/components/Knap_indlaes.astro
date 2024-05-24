@@ -2,22 +2,28 @@
 
 ---
 
-<div>Indlæs mere</div>
+<div class="knap">
+  <div>Indlæs mere</div>
+</div>
 
 <style>
-  div {
-    width: 190px;
-    justify-items: center;
+  .knap {
+    display: grid;
+    place-items: center;
+  }
 
+  .knap div {
+    width: 190px;
     color: #fffbf6;
     background-color: #293750;
-    padding: 20px 40px 20px 40px;
+    padding: 20px 40px;
     font-family: "Inter", sans-serif;
     font-size: 20px;
     white-space: nowrap;
-    display: inline;
+    display: inline-block; /* Ændret fra 'inline' til 'inline-block' */
   }
-  div:hover {
+
+  .knap div:hover {
     color: #293750;
     background-color: #9dc4ff;
   }
