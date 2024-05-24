@@ -1,48 +1,62 @@
 ---
+const { skitseimg, kunstner, maal, id, pris } = Astro.props;
 ---
 
-<div class="card">
-    <img src="img/skitse.webp" alt="Billede af en skitse">
-    <p class="kunstner">Peter Voss-Knude</p>
-    <div class="info">
-        <p class="størrelse">29,6 x 42 cm</p>
-        <p class="pris">2.999 DKK</p>
+<a href={`/skitse/${id}`}>
+  <section>
+    <div class="card">
+      <img src={skitseimg} alt="billede af skitse" />
+      <p class="kunstner">{kunstner}</p>
+      <div class="info">
+        <p class="størrelse">{maal}</p>
+        <p class="pris">{pris}</p>
+      </div>
     </div>
-</div>
+  </section>
+</a>
 
 <style>
-    img {
-        width: 250px;
-        padding-bottom: 20px;
-    }
+  img {
+    width: 250px;
+    padding-bottom: 20px;
+  }
 
-    .info {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        max-width: 300px;
-        padding-top: 10px;
-    }
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 300px;
+    padding-top: 10px;
+    text-decoration: none;
+  }
 
-    p {
-        color: var(--farve1);
-    }
+  p {
+    color: var(--farve1);
+    text-decoration: none;
+  }
 
-    .pris {
-        color: var(--farve3);
-        font-size: 20px;
-    }
+  .pris {
+    color: var(--farve3);
+    font-size: 20px;
+    text-decoration: none;
+  }
 
-    .kunstner {
-        color: var(--farve1);
-        font-size: 25px;
-    }
+  .kunstner {
+    color: var(--farve1);
+    font-size: 25px;
+  }
 
-    .størrelse {
-        color: var(--farve2);
-    }
+  .kunster p {
+    text-decoration: none;
+  }
 
-    .card {
-        padding: 10px;
-    }
+  .størrelse {
+    color: var(--farve2);
+    text-decoration: none;
+  }
+
+  .card {
+    padding: 10px;
+    text-decoration: none;
+  }
 </style>
