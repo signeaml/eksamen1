@@ -1,4 +1,5 @@
 ---
+import KnapKurv from "./Knap_kurv.astro";
 const { skitseimg, kunstner, maal, id, pris } = Astro.props;
 ---
 
@@ -11,52 +12,65 @@ const { skitseimg, kunstner, maal, id, pris } = Astro.props;
         <p class="størrelse">{maal}</p>
         <p class="pris">{pris}</p>
       </div>
+      <div class="knap">
+        <KnapKurv class="knapkurv" />
+      </div>
     </div>
   </section>
+
+  <style>
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Juster højden efter behov */
+    }
+    a {
+      text-decoration: none;
+    }
+    img {
+      width: 250px;
+      height: 350px;
+    }
+
+    .knap {
+      display: flex;
+      justify-content: center; /* Centrerer knappen horisontalt */
+      width: 100%; /* Gør containeren lige så bred som card */
+      margin-top: 10px; /* Tilføjer lidt margin over knappen */
+    }
+
+    .info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      max-width: 246px;
+    }
+
+    p {
+      color: var(--farve1);
+    }
+
+    .pris {
+      color: var(--farve3);
+      font-size: 20px;
+    }
+
+    .kunstner {
+      color: var(--farve1);
+      font-size: 25px;
+    }
+
+    .størrelse {
+      color: var(--farve2);
+      text-decoration: none;
+    }
+
+    .card {
+      text-decoration: none;
+      margin: 0 0 40px 0;
+    }
+  </style>
 </a>
-
-<style>
-  img {
-    width: 250px;
-    padding-bottom: 20px;
-  }
-
-  .info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    max-width: 300px;
-    padding-top: 10px;
-    text-decoration: none;
-  }
-
-  p {
-    color: var(--farve1);
-    text-decoration: none;
-  }
-
-  .pris {
-    color: var(--farve3);
-    font-size: 20px;
-    text-decoration: none;
-  }
-
-  .kunstner {
-    color: var(--farve1);
-    font-size: 25px;
-  }
-
-  .kunster p {
-    text-decoration: none;
-  }
-
-  .størrelse {
-    color: var(--farve2);
-    text-decoration: none;
-  }
-
-  .card {
-    padding: 10px;
-    text-decoration: none;
-  }
-</style>
