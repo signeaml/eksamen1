@@ -6,7 +6,7 @@ import KnapKurv from "../../components/Knap_kurv.astro";
 // Funktion til at hente de statiske paths
 export async function getStaticPaths() {
   const response = await fetch(
-    "https://edmdwdbbleydenvducsr.supabase.co/rest/v1/skitse?select=*",
+    "https://edmdwdbbleydenvducsr.supabase.co/rest/v1/merch",
     {
       method: "GET",
       headers: {
@@ -33,7 +33,7 @@ console.log(data);
   <article>
     <div class="singleview">
       <div>
-        <img src={data.skitseimg} alt="Billede af skitsen" />
+        <img src={data.img1} alt="Billede af merch" />
       </div>
       <div>
         <div class="info">
@@ -47,62 +47,62 @@ console.log(data);
       </div>
     </div>
   </article>
+</Layout>
 
-  <style>
+<style>
+  img {
+    width: 300px;
+    height: auto;
+    margin-top: 100px;
+  }
+
+  .pris_skitse {
+    color: var(--farve4);
+  }
+
+  .beskrivelse {
+    width: 500px;
+  }
+
+  .singleview {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrerer vertikalt */
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 800px) {
+    .info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .singleview {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 50px;
+    }
+
     img {
-      width: 300px;
+      max-width: 500px;
       height: auto;
       margin-top: 100px;
     }
 
-    .pris_skitse {
-      color: var(--farve4);
+    .andre-vaerker {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      width: 400px;
+      margin: auto;
     }
-
-    .beskrivelse {
-      width: 500px;
-    }
-
-    .singleview {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Centrerer vertikalt */
-    }
-    .card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    @media (max-width: 800px) {
-      .info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    @media (min-width: 800px) {
-      .singleview {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 50px;
-      }
-
-      img {
-        max-width: 500px;
-        height: auto;
-        margin-top: 100px;
-      }
-
-      .andre-vaerker {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 40px;
-        width: 400px;
-        margin: auto;
-      }
-    }
-  </style>
-</Layout>
+  }
+</style>

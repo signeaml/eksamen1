@@ -33,16 +33,16 @@ const data = await response.json();
     </div>
     <div class="merch">
       {
-        data.map((element) => {
-          return (
+        data.map((element) => (
+          <a href={`.../merch/${element.id}`} key={element.id}>
             <CardMerch
               kunstner={element.kunstner}
               img1={element.img1}
               materiale={element.materiale}
               pris={element.pris}
             />
-          );
-        })
+          </a>
+        ))
       }
       <KnapIndlaes id="load-more" />
     </div>
