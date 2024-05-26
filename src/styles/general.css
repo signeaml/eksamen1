@@ -28,6 +28,11 @@ h2 {
   color: var(--farve1);
   font-family: "Inter", sans-serif;
 }
+
+h3{
+  color: var(--farve5);
+  font-family: "Inter", sans-serif;
+}
 p {
   color: var(--farve1);
   font-family: "Inter", sans-serif;
