@@ -17,7 +17,9 @@ import "/src/styles/general.css";
         <p class="størrelse">29,6 x 42 cm</p>
         <p class="pris">2.499 kr</p>
       </div>
-      <KnapKurv />
+      <div class="knapcontainer">
+        <KnapKurv />
+      </div>
     </div>
 
     <div class="gemte">
@@ -27,7 +29,9 @@ import "/src/styles/general.css";
         <p class="størrelse">37 x 29 cm</p>
         <p class="pris">2.499 kr</p>
       </div>
-      <KnapKurv />
+      <div class="knapcontainer">
+        <KnapKurv />
+      </div>
     </div>
 
     <div class="gemte">
@@ -37,7 +41,9 @@ import "/src/styles/general.css";
         <p class="størrelse">20,9 x 29,6 cm</p>
         <p class="pris">2.499 kr</p>
       </div>
-      <KnapKurv />
+      <div class="knapcontainer">
+        <KnapKurv />
+      </div>
     </div>
 
     <div class="gemte">
@@ -47,7 +53,9 @@ import "/src/styles/general.css";
         <p class="størrelse">19 x 27 cm</p>
         <p class="pris">2.499 kr</p>
       </div>
-      <KnapKurv />
+      <div class="knapcontainer">
+        <KnapKurv />
+      </div>
     </div>
 
     <div class="gemte">
@@ -57,7 +65,9 @@ import "/src/styles/general.css";
         <p class="størrelse">30 x 40 cm</p>
         <p class="pris">2.499 kr</p>
       </div>
-      <KnapKurv />
+      <div class="knapcontainer">
+        <KnapKurv />
+      </div>
     </div>
 
     <div class="gemte">
@@ -67,7 +77,9 @@ import "/src/styles/general.css";
         <p class="størrelse">29 x 38 cm</p>
         <p class="pris">2.499 kr</p>
       </div>
-      <KnapKurv />
+      <div class="knapcontainer">
+        <KnapKurv />
+      </div>
     </div>
   </div>
 </Layout>
@@ -82,16 +94,11 @@ import "/src/styles/general.css";
     padding-top: 50px;
   }
 
-  .info p {
-    color: var(--farve1);
-  }
-
   .info {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     max-width: 300px;
-    padding-top: 10px;
     text-decoration: none;
     padding-bottom: 20px;
   }
@@ -108,6 +115,12 @@ import "/src/styles/general.css";
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+  }
+
+  .knapcontainer {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Sikrer at containeren fylder hele bredden */
   }
 
   @media (min-width: 800px) {
