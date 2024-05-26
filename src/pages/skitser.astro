@@ -27,17 +27,19 @@ const data = await response.json();
     </div>
     <div class="skitse">
       {
-        data.map((element) => {
-          return (
+        data.map((element) => (
+          <a href={`.../skitse/${element.id}`} key={element.id}>
             <CardSkitse
               kunstner={element.kunstner}
               skitseimg={element.skitseimg}
               maal={element.maal}
               pris={element.pris}
+              id={element.id}
             />
-          );
-        })
+          </a>
+        ))
       }
+       }
       <KnapIndlaes id="load-more" />
     </div>
   </div>
@@ -69,6 +71,13 @@ const data = await response.json();
       gap: 70px;
       margin-right: 20px;
     }
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    max-width: 246px;
   }
 </style>
 
