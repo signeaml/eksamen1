@@ -1,0 +1,121 @@
+---
+import Layout from "../Layout.astro";
+import CardMerch from "../components/Card_merch.astro";
+import Filtrering from "../components/Filtrering.astro";
+import Filtering from "../components/Filtrering.astro";
+import KnapIndlaes from "../components/Knap_indlaes.astro";
+
+const response = await fetch(
+  "https://edmdwdbbleydenvducsr.supabase.co/rest/v1/merch",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkbWR3ZGJibGV5ZGVudmR1Y3NyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MTk3MDQsImV4cCI6MjAzMTE5NTcwNH0.FuI_0k2FhT6bryNsIK2YrNwfo_XJGqVMm9bbVrtxHrU",
+    },
+  }
+);
+const data = await response.json();
+---
+
+<Layout>
+  <h1>Kunstmerchandise</h1>
+  <p>
+    Kunstnernes idéer og projekter spænder bredt. I SKITSE har vi samlet alt fra
+    reproduktioner af værker til pladeudgivelser, strømper, sweatshirts, spil
+    etc. Alt sammen udviklet af kunstnerne selv i forbindelse med udstillinger
+    eller til direkte salg fra butikken.
+  </p>
+
+  <div class="grid_1_1">
+    <div class="filtering">
+      <Filtrering />
+    </div>
+    <div class="merch">
+      {
+        data.map((element) => {
+          return (
+            <CardMerch
+              kunstner={element.kunstner}
+              img1={element.img1}
+              materiale={element.materiale}
+              pris={element.pris}
+            />
+          );
+        })
+      }
+      <KnapIndlaes id="load-more" />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    padding-bottom: 40px;
+    font-family: "Paytone One", sans-serif;
+  }
+
+  .filtering {
+    width: 50px;
+    margin-left: 30px;
+  }
+
+  .grid_1_1 {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+  }
+
+  p {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: 800px) {
+    .merch {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-items: center;
+      justify-content: center;
+      gap: 70px;
+      margin-right: 20px;
+    }
+    p {
+      padding-left: 350px;
+      padding-right: 350px;
+      padding-bottom: 50px;
+    }
+  }
+</style>
+
+<!-- <script>
+  data.slice(0, 12).map((element) =>)
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      let loadMoreBtn = document.querySelector("#load-more") as HTMLButtonElement;
+      if (loadMoreBtn !== null) {
+        let currentItem = 12;
+  
+        loadMoreBtn.onclick = () => {
+          console.log("Button clicked"); // Tjek om denne besked vises i konsollen
+  
+          let boxes = document.querySelectorAll(".skitse > *");
+  
+          for (
+            let i = currentItem;
+            i < currentItem + 12 && i < boxes.length;
+            i++
+          ) {
+            (boxes[i] as HTMLElement).style.display = "inline-block";
+          }
+  
+          currentItem += 12;
+  
+          if (currentItem >= boxes.length) {
+            loadMoreBtn.style.display = "none";
+          }
+        };
+      }
+    });
+  </script> -->
