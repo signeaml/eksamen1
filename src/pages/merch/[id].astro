@@ -38,10 +38,13 @@ console.log(data);
       </div>
       <div>
         <div class="info">
-          <h2 class="kunstner_skitse">{data.kunstner}</h2>
-          <h2 class="navn_skitse">{data.navn}</h2>
-          <h2 class="maal_skitse">{data.maal}</h2>
-          <h3 class="pris_skitse">{data.pris}</h3>
+          <h2 class="kunstner_merch">{data.kunstner}</h2>
+          <h2 class="navn_merch">{data.navn}</h2>
+          <h2 class="maal_merch">{data.maal}</h2>
+          <h3 class="varenummer_merch">{data.varenummer}</h3>
+
+          <h3 class="pris_merch">{data.pris}</h3>
+
           <KnapKurv />
         </div>
         <p class="beskrivelse">{data.beskrivelse}</p>
@@ -57,7 +60,7 @@ console.log(data);
     margin-top: 100px;
   }
 
-  .pris_skitse {
+  .pris_merch {
     color: var(--farve4);
   }
 
@@ -96,14 +99,6 @@ console.log(data);
       max-width: 500px;
       height: auto;
       margin-top: 100px;
-    }
-
-    .andre-vaerker {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 40px;
-      width: 400px;
-      margin: auto;
     }
   }
 </style>

@@ -1,6 +1,6 @@
 ---
 import KnapKurv from "./Knap_kurv.astro";
-const { kunstner, materiale, pris, id, img1 } = Astro.props;
+const { kunstner, materiale, pris, id, img1, varenummer } = Astro.props;
 ---
 
 <a href={`/merch/${id}`}>
@@ -11,6 +11,7 @@ const { kunstner, materiale, pris, id, img1 } = Astro.props;
         <img src={img1} alt="billede af merchandise" class="main_img" />
       </div>
       <p class="kunstner">{kunstner}</p>
+      <p class="merch_nr">{varenummer}</p>
       <div class="info">
         <p class="materiale">{materiale}</p>
         <p class="pris">{pris}</p>
@@ -62,6 +63,7 @@ const { kunstner, materiale, pris, id, img1 } = Astro.props;
       align-items: center;
       text-decoration: none;
       max-width: 246px;
+      height: 100px;
     }
 
     p {
