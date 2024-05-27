@@ -86,19 +86,27 @@
   }
 
   .filter-content {
+    display: none; /* Ensure filter content is hidden by default */
     font-family: "Inter", sans-serif;
     border-top: none;
     font-size: 12px;
+  }
+
+  .filter-content label:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }
 
   .filter-content label {
     display: block;
     margin-bottom: 20px;
   }
+
   h3 {
     font-family: "Inter", sans-serif;
     color: #293750;
   }
+
   .filter-content label {
     color: #293750;
   }
@@ -120,11 +128,11 @@
       title.addEventListener("click", function () {
         const content = this.nextElementSibling;
         const isOpen = content.style.display === "block";
-        document
-          .querySelectorAll(".filter-content")
-          .forEach((item) => (item.style.display = "none"));
+        document.querySelectorAll(".filter-content").forEach((item) => {
+          (item as HTMLElement).style.display = "none";
+        });
         if (!isOpen) {
-          content.style.display = "block";
+          (content as HTMLElement).style.display = "block";
         }
       });
     });

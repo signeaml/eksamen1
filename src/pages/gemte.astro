@@ -11,7 +11,10 @@ import "/src/styles/general.css";
 
   <div class="grid_1_1_1">
     <div class="gemte">
-      <img src="/medier/gemt1.webp" alt="likede billeder" />
+      <div class="image-container">
+        <img src="/medier/gemt1.webp" alt="likede billeder" class="main_img" />
+        <img src="/medier/fyldt_hjerte.webp" alt="hjerte" class="heart_img" />
+      </div>
       <p>Peter Vos Knude</p>
       <div class="info">
         <p class="størrelse">29,6 x 42 cm</p>
@@ -23,7 +26,10 @@ import "/src/styles/general.css";
     </div>
 
     <div class="gemte">
-      <img src="/medier/gemt2.webp" alt="likede billeder" />
+      <div class="image-container">
+        <img src="/medier/gemt2.webp" alt="likede billeder" class="main_img" />
+        <img src="/medier/fyldt_hjerte.webp" alt="hjerte" class="heart_img" />
+      </div>
       <p>Agnete Bertram</p>
       <div class="info">
         <p class="størrelse">37 x 29 cm</p>
@@ -35,7 +41,10 @@ import "/src/styles/general.css";
     </div>
 
     <div class="gemte">
-      <img src="/medier/gemt3.webp" alt="likede billeder" />
+      <div class="image-container">
+        <img src="/medier/gemt3.webp" alt="likede billeder" class="main_img" />
+        <img src="/medier/fyldt_hjerte.webp" alt="hjerte" class="heart_img" />
+      </div>
       <p>Peter Vos Knude</p>
       <div class="info">
         <p class="størrelse">20,9 x 29,6 cm</p>
@@ -47,7 +56,10 @@ import "/src/styles/general.css";
     </div>
 
     <div class="gemte">
-      <img src="/medier/gemt4.webp" alt="likede billeder" />
+      <div class="image-container">
+        <img src="/medier/gemt4.webp" alt="likede billeder" class="main_img" />
+        <img src="/medier/fyldt_hjerte.webp" alt="hjerte" class="heart_img" />
+      </div>
       <p>Johanne Rude</p>
       <div class="info">
         <p class="størrelse">19 x 27 cm</p>
@@ -59,7 +71,10 @@ import "/src/styles/general.css";
     </div>
 
     <div class="gemte">
-      <img src="/medier/gemt5.webp" alt="likede billeder" />
+      <div class="image-container">
+        <img src="/medier/gemt5.webp" alt="likede billeder" class="main_img" />
+        <img src="/medier/fyldt_hjerte.webp" alt="hjerte" class="heart_img" />
+      </div>
       <p>Ditte Marie Frost</p>
       <div class="info">
         <p class="størrelse">30 x 40 cm</p>
@@ -71,7 +86,10 @@ import "/src/styles/general.css";
     </div>
 
     <div class="gemte">
-      <img src="/medier/gemt5.webp" alt="likede billeder" />
+      <div class="image-container">
+        <img src="/medier/gemt6.webp" alt="likede billeder" class="main_img" />
+        <img src="/medier/fyldt_hjerte.webp" alt="hjerte" class="heart_img" />
+      </div>
       <p>Moa Alskog</p>
       <div class="info">
         <p class="størrelse">29 x 38 cm</p>
@@ -85,13 +103,27 @@ import "/src/styles/general.css";
 </Layout>
 
 <style>
-  img {
-    padding-top: 100px;
-    width: 250px;
-  }
-
   h1 {
     padding-top: 50px;
+  }
+
+  .image-container {
+    padding-top: 90px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .main_image {
+    width: 250px;
+    padding-top: 100px;
+  }
+
+  img.heart_img {
+    width: 25px;
+    height: 22px;
+    position: absolute;
+    top: 100px; /* Juster efter behov */
+    right: 10px; /* Juster efter behov */
   }
 
   .info {
