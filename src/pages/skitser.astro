@@ -1,8 +1,8 @@
 ---
 import Layout from "../Layout.astro";
 import CardSkitse from "../components/Card_skitse.astro";
-import Filtrering from "../components/Filtrering.astro";
-import Filtering from "../components/Filtrering.astro";
+import Filtrering_skitse from "../components/Filtrering_skitse.astro";
+import Filtering from "../components/Filtrering_skitse.astro";
 import KnapIndlaes from "../components/Knap_indlaes.astro";
 
 const response = await fetch(
@@ -23,7 +23,7 @@ const data = await response.json();
 
   <div class="grid_1_1">
     <div class="filtering">
-      <Filtrering />
+      <Filtrering_skitse />
     </div>
     <iv class="skitse">
       {
@@ -60,13 +60,16 @@ const data = await response.json();
     grid-template-columns: 0.25fr 1fr;
   }
 
+  .skitse {
+    margin-top: 25px;
+  }
+
   @media (min-width: 800px) {
     .skitse {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-items: center;
-      justify-content: center;
       gap: 70px;
       margin-right: 20px;
     }
