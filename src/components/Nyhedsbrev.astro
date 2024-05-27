@@ -3,78 +3,74 @@
 ---
 
 <section class="background-section">
-    <form class="myForm">
-      <div class="form-mail">
-        <label>
-          <input type="email" placeholder="Mail" name="mail" id="mail" />
-          <button type="submit" class="send-button">
-            &#x27A4; <!-- Unicode pil -->
-          </button>
-        </label>
-      </div>
-    </form>
-  </section>
-  
-  
-    
-    <style>
-      .myForm {
-  text-align: center;
-  padding: 20px;
+  <form class="myForm">
+    <div class="form-mail">
+      <label>
+        <input type="email" placeholder="Mail" name="mail" id="mail" />
+        <button type="submit" class="send-button">
+          &#x27A4; <!-- Unicode pil -->
+        </button>
+      </label>
+    </div>
+  </form>
+</section>
 
-}
-.background-section{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-width: 38%;
-height: 100%;
-  background-image: url('medier/nyhedsbrev_1.png'); /* Replace with your image path */
-  background-size:272px; /* Ensure the image covers the whole section */
-  background-position: left; /* Center the image */
-  margin-right: auto;
-  margin-left: auto;
-margin-top: 200px;
-margin-bottom: 200px;
-}
-.form-mail {
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-}
+<style>
+  .myForm {
+    text-align: center;
+    padding: 20px;
+  }
+  .background-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38%;
+    height: 100%;
+    background-image: url("medier/nyhedsbrev_1.png"); /* Replace with your image path */
+    background-size: 272px; /* Ensure the image covers the whole section */
+    background-position: left; /* Center the image */
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px;
+    margin-bottom: 100px;
+  }
+  .form-mail {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+  }
 
-.myForm label {
-  position: relative;
-  display: flex;
-}
+  .myForm label {
+    position: relative;
+    display: flex;
+  }
 
-.myForm label input {
-  height: 40px;
-  width: 200px;
-  padding-left: 15px;
-  border: 1px solid #6388C4;
-  border-radius: 4px 0 0 4px; /* Round left corners */
-}
+  .myForm label input {
+    height: 40px;
+    width: 200px;
+    padding-left: 15px;
+    border: 1px solid #6388c4;
+    border-radius: 4px 0 0 4px; /* Round left corners */
+  }
 
-.myForm label .send-button {
-  height: 40px;
-  width: 40px;
-  border: 1px solid #6388C4;
-  border-left: none; /* Remove the border between input and button */
-  background-color: #6388C4;
-  color: white;
-  cursor: pointer;
-  border-radius: 0 4px 4px 0; /* Round right corners */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  font-size: 20px; /* Adjust as needed */
-  transition: background-color 0.3s;
-}
+  .myForm label .send-button {
+    height: 40px;
+    width: 40px;
+    border: 1px solid #6388c4;
+    border-left: none; /* Remove the border between input and button */
+    background-color: #6388c4;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0; /* Round right corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 20px; /* Adjust as needed */
+    transition: background-color 0.3s;
+  }
 
-.myForm label .send-button:hover {
-  background-color: #4e6ba1;
-}
-
+  .myForm label .send-button:hover {
+    background-color: #4e6ba1;
+  }
 </style>
