@@ -2,7 +2,9 @@
 
 ---
 
-<button class="button">Indlæs mere</button>
+<div>
+  <button class="button">Indlæs mere</button>
+</div>
 <style>
   .button {
     color: #fffbf6;
@@ -13,8 +15,13 @@
     text-decoration: none; /* Ingen tekstdekoration */
     display: inline-block; /* Inline-block element */
     font-size: 16px; /* Tekststørrelse */
-    margin: 4px 2px; /* Margin omkring knappen */
     cursor: pointer; /* Skift cursor ved hover */
+  }
+
+  div {
+    display: flex;
+    justify-content: center; /* Centrerer vandret */
+    align-items: center; /* Centrerer lodret */
   }
   .button:hover {
     background-color: var(--farve4); /* Lys blå farve */
