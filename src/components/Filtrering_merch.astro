@@ -1,0 +1,138 @@
+---
+
+---
+
+<div class="filter-menu">
+  <h3>Filter:</h3>
+  <hr />
+  <div>
+    <div class="filter-item">
+      <button class="filter-title">Kunstner</button>
+      <div class="filter-content">
+        <label> Banaan Al-Nasser</label>
+        <label>Kim Richard Adler Mejdahl</label>
+        <label> Emilia Bergmark</label>
+        <label> Asger H. Gjerdevik</label>
+        <label>Ragnhild May</label>
+        <label>Filip Vest</label>
+        <label>Silas Inoue</label>
+        <label> Andreas Rasmussen</label>
+        <label> Monia Sander Haj-Mohamed</label>
+        <label>Mo Maja Moesgaard</label>
+      </div>
+    </div>
+    <hr />
+    <div class="filter-item">
+      <button class="filter-title">Pris</button>
+      <div class="filter-content">
+        <label><input type="checkbox" name="price1" /> Under 500 kr</label>
+        <label><input type="checkbox" name="price2" /> 500 - 1000 kr</label>
+        <label><input type="checkbox" name="price3" /> Over 1000 kr</label>
+      </div>
+    </div>
+    <hr />
+    <div class="filter-item">
+      <button class="filter-title">Størrelse</button>
+      <div class="filter-content">
+        <label><input type="checkbox" name="size1" /> Lille</label>
+        <label><input type="checkbox" name="size2" /> Mellem</label>
+        <label><input type="checkbox" name="size3" /> Stor</label>
+      </div>
+    </div>
+    <hr />
+    <div class="filter-item">
+      <button class="filter-title" id="kategori">Kategori</button>
+      <div class="filter-content">
+        <label><input type="checkbox" name="category1" /> Maleri</label>
+        <label><input type="checkbox" name="category2" /> Skulptur</label>
+        <label><input type="checkbox" name="category3" /> Tegning</label>
+      </div>
+    </div>
+    <hr />
+  </div>
+</div>
+
+<style>
+  .filter-menu {
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0 0 0;
+  }
+
+  .filter-item {
+    margin-bottom: 10px;
+  }
+
+  .filter-title {
+    background-color: transparent;
+    color: #667183;
+    padding: 20px 0 20px 0;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    font-family: "Inter", sans-serif;
+    width: 600px;
+    font-size: 15px;
+    border: none;
+  }
+
+  .filter-title:hover {
+    text-decoration: underline;
+  }
+
+  .filter-content {
+    display: none; /* Ensure filter content is hidden by default */
+    font-family: "Inter", sans-serif;
+    border-top: none;
+    font-size: 12px;
+  }
+
+  .filter-content label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .filter-content label {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-family: "Inter", sans-serif;
+    color: #293750;
+  }
+
+  .filter-content label {
+    color: #293750;
+  }
+
+  hr {
+    display: block;
+    width: 125px;
+    height: 2px;
+    background: var(--farve2);
+    border: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterTitles = document.querySelectorAll(".filter-title");
+
+    filterTitles.forEach((title) => {
+      title.addEventListener("click", function () {
+        const content = this.nextElementSibling;
+        const isOpen = content.style.display === "block";
+        document.querySelectorAll(".filter-content").forEach((item) => {
+          (item as HTMLElement).style.display = "none";
+        });
+        if (!isOpen) {
+          (content as HTMLElement).style.display = "block";
+        }
+      });
+    });
+  });
+</script>
