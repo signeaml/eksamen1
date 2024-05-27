@@ -1,3 +1,63 @@
 ---
+
 ---
 
+<button class="to-top" id="toTopBtn">Til top</button>
+
+<style>
+  .button {
+    color: #fffbf6;
+    background-color: #293750;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .button:hover {
+    background-color: var(--farve4);
+    color: var(--farve1);
+  }
+  .to-top {
+    display: none; /* Skjult som standard */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #293750;
+    color: #fffbf6;
+    border: none;
+    cursor: pointer;
+  }
+  .to-top:hover {
+    background-color: var(--farve4);
+    color: var(--farve1);
+  }
+</style>
+
+<script>
+  // Vis knappen når brugeren scroller ned 20px fra toppen af dokumentet
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    var toTopBtn = document.getElementById("toTopBtn");
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      toTopBtn.style.display = "block";
+    } else {
+      toTopBtn.style.display = "none";
+    }
+  }
+
+  // Scroll til toppen af dokumentet, når brugeren klikker på knappen
+  document.getElementById("toTopBtn").onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+</script>
