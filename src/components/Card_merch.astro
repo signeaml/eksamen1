@@ -6,7 +6,7 @@ const { kunstner, materiale, pris, id, img1 } = Astro.props;
 <a href={`/merch/${id}`}>
   <section>
     <div class="card">
-      <img src={img1} alt="billede af skitse" />
+      <img src={img1} alt="billede af merchandise" class="img1" />
       <p class="kunstner">{kunstner}</p>
       <div class="info">
         <p class="materiale">{materiale}</p>
@@ -28,7 +28,7 @@ const { kunstner, materiale, pris, id, img1 } = Astro.props;
     a {
       text-decoration: none;
     }
-    img {
+    .img1 {
       width: 250px;
       height: 350px;
     }
