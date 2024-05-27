@@ -49,6 +49,12 @@ import Layout from "../Layout.astro";
     </div>
   </div>
 
+  <img
+    src="/medier/tynd_krusedulle.svg"
+    alt="tynd krusedulle"
+    class="krusedulle"
+  />
+
   <div class="grid_1_2">
     <img src="medier/eventbillede5.webp" alt="billede fra event" />
     <div>
@@ -67,6 +73,12 @@ import Layout from "../Layout.astro";
       </p>
     </div>
   </div>
+
+  <img
+    src="/medier/tynd_krusedulle.svg"
+    alt="tynd krusedulle"
+    class="krusedulle"
+  />
 
   <div class="grid_1_2">
     <img src="medier/eventbillede6.webp" alt="billede fra event" />
@@ -110,7 +122,7 @@ import Layout from "../Layout.astro";
   .grid_1_2 {
     padding-left: 50px;
     padding-right: 50px;
-    padding-bottom: 70px;
+    padding-bottom: 30px;
   }
 
   .grid_1_2 img {
@@ -128,6 +140,13 @@ import Layout from "../Layout.astro";
   }
   .farve {
     color: #6388c4;
+  }
+
+  .krusedulle {
+    width: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 60px;
   }
 
   @media (min-width: 800px) {
@@ -161,6 +180,11 @@ import Layout from "../Layout.astro";
     .img2 {
       display: block;
       height: 180px;
+    }
+
+    .krusedulle {
+      width: 60px;
+      padding-bottom: 40px;
     }
   }
 </style>
