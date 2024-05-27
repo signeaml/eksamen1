@@ -36,7 +36,7 @@ console.log(data);
   <article>
     <div class="singleview">
       <div>
-        <img src={data.skitseimg} alt="Billede af skitsen" />
+        <img src={data.skitseimg} alt="Billede af skitsen" class="skitseimg" />
       </div>
       <div>
         <div class="info">
@@ -51,61 +51,170 @@ console.log(data);
     </div>
   </article>
 
-  <style>
-    img {
-      width: 300px;
-      height: auto;
-      margin-top: 100px;
-    }
+  <h2 class="overskrift">Andre værker</h2>
 
-    .pris_skitse {
-      color: var(--farve4);
-    }
+  <div class="grid_1_1_1">
+    <div class="gemte">
+      <div class="image-container">
+        <img src="/medier/gemt1.webp" alt="likede billeder" class="main_img" />
+        <img src="/medier/hjerte.webp" alt="hjerte" class="heart_img" />
+      </div>
+      <p>Peter Vos Knude</p>
+      <div class="info">
+        <p class="størrelse">29,6 x 42 cm</p>
+        <p class="pris">2.499 kr</p>
+      </div>
+      <div class="knapcontainer">
+        <KnapKurv />
+      </div>
+    </div>
 
-    .beskrivelse {
-      width: 500px;
-    }
+    <div class="gemte">
+      <div class="image-container">
+        <img src="/medier/gemt2.webp" alt="likede billeder" class="main_img" />
+        <img src="/medier/hjerte.webp" alt="hjerte" class="heart_img" />
+      </div>
+      <p>Agnete Bertram</p>
+      <div class="info">
+        <p class="størrelse">37 x 29 cm</p>
+        <p class="pris">2.499 kr</p>
+      </div>
+      <div class="knapcontainer">
+        <KnapKurv />
+      </div>
+    </div>
 
-    .singleview {
+    <div class="gemte">
+      <div class="image-container">
+        <img src="/medier/gemt3.webp" alt="likede billeder" class="main_img" />
+        <img src="/medier/hjerte.webp" alt="hjerte" class="heart_img" />
+      </div>
+      <p>Peter Vos Knude</p>
+      <div class="info">
+        <p class="størrelse">20,9 x 29,6 cm</p>
+        <p class="pris">2.499 kr</p>
+      </div>
+      <div class="knapcontainer">
+        <KnapKurv />
+      </div>
+    </div>
+  </div>
+</Layout>
+<style>
+  .skitseimg {
+    width: 300px;
+    height: auto;
+    margin-top: 100px;
+  }
+
+  .overskrift {
+    padding-top: 80px;
+    text-align: center;
+  }
+
+  .pris_skitse {
+    color: var(--farve4);
+  }
+
+  .beskrivelse {
+    width: 500px;
+  }
+
+  .singleview {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrerer vertikalt */
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .main_image {
+    width: 250px;
+    margin-top: 20px;
+  }
+
+  img.heart_img {
+    width: 25px;
+    height: 22px;
+    position: absolute;
+    top: 42px;
+    right: 10px;
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 300px;
+    text-decoration: none;
+    padding-bottom: 20px;
+  }
+
+  .pris {
+    color: var(--farve3);
+  }
+
+  .størrelse {
+    color: var(--farve2);
+  }
+
+  .grid_1_1_1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .knapcontainer {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Sikrer at containeren fylder hele bredden */
+  }
+  @media (max-width: 800px) {
+    .info {
       display: flex;
       flex-direction: column;
-      align-items: center; /* Centrerer vertikalt */
-    }
-    .card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
     }
-    @media (max-width: 800px) {
-      .info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+  }
+
+  @media (min-width: 800px) {
+    .singleview {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 50px;
     }
 
-    @media (min-width: 800px) {
-      .singleview {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 50px;
-      }
-
-      img {
-        max-width: 500px;
-        height: auto;
-        margin-top: 100px;
-      }
-
-      .andre-vaerker {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 40px;
-        width: 400px;
-        margin: auto;
-      }
+    .skitseimg {
+      max-width: 500px;
+      height: auto;
     }
-  </style>
-</Layout>
+
+    .main_img {
+      margin-top: 30px;
+    }
+
+    .andre-vaerker {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      width: 400px;
+      margin: auto;
+    }
+
+    .grid_1_1_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+    }
+  }
+</style>
