@@ -6,7 +6,10 @@ const { skitseimg, kunstner, maal, id, pris } = Astro.props;
 <a href={`/skitse/${id}`}>
   <section>
     <div class="card">
-      <img src={skitseimg} alt="billede af skitse" />
+      <div class="image-container">
+        <img src="/medier/hjerte.webp" alt="hjerte" class="heart_img" />
+        <img src={skitseimg} alt="billede af skitse" class="main_img" />
+      </div>
       <p class="kunstner">{kunstner}</p>
       <div class="info">
         <p class="størrelse">{maal}</p>
@@ -28,9 +31,23 @@ const { skitseimg, kunstner, maal, id, pris } = Astro.props;
     a {
       text-decoration: none;
     }
-    img {
+
+    .main_img {
       width: 250px;
       height: 350px;
+    }
+    .image-container {
+      padding-top: 90px;
+      position: relative;
+      display: inline-block;
+    }
+
+    img.heart_img {
+      width: 35px;
+      height: 32px;
+      position: absolute;
+      top: 100px; /* Juster efter behov */
+      right: 10px; /* Juster efter behov */
     }
 
     .knap {
