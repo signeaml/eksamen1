@@ -34,7 +34,7 @@ const data = await response.json();
     <div class="merch">
       {
         data.map((element) => (
-          <a href={`.../merch/${element.id}`} key={element.id}>
+          <a href={`.../merch/${element.id}`}>
             <CardMerch
               kunstner={element.kunstner}
               img1={element.img1}

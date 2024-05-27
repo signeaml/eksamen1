@@ -2,15 +2,10 @@
 
 ---
 
-<div class="product-container"></div>
 <div>
   <button class="button">Indlæs mere</button>
 </div>
 <style>
-  .product {
-    display: inline-block;
-    margin: 10px;
-  }
   .button {
     color: #fffbf6;
     background-color: #293750;
@@ -33,41 +28,3 @@
     color: var(--farve1); /* Sort tekst */
   }
 </style>
-
-<script>
-  let currentItem = 0;
-  const limit = 12;
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const loadMoreBtn = document.querySelector("#load-more");
-    const productContainer = document.querySelector(".product-container");
-
-    function loadProducts() {
-      fetch(`/api/products?start=${currentItem}&limit=${limit}`)
-        .then((response) => response.json())
-        .then((products) => {
-          products.forEach((product) => {
-            const productDiv = document.createElement("div");
-            productDiv.classList.add("product");
-            productDiv.textContent = product.name;
-            productContainer.appendChild(productDiv);
-          });
-
-          currentItem += limit;
-
-          // Hvis der er færre produkter end limit, skjul knappen
-          if (products.length < limit) {
-            loadMoreBtn.style.display = "none";
-          }
-        })
-        .catch((error) => console.error("Error loading products:", error));
-    }
-
-    loadMoreBtn.onclick = () => {
-      loadProducts();
-    };
-
-    // Load initial products
-    loadProducts();
-  });
-</script>

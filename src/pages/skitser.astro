@@ -28,7 +28,7 @@ const data = await response.json();
     <iv class="skitse">
       {
         data.map((element) => (
-          <a href={`.../skitse/${element.id}`} key={element.id}>
+          <a href={`.../skitse/${element.id}`}>
             <CardSkitse
               kunstner={element.kunstner}
               skitseimg={element.skitseimg}
