@@ -25,7 +25,7 @@ const data = await response.json();
     <div class="filtering">
       <Filtrering />
     </div>
-    <div class="skitse">
+    <iv class="skitse">
       {
         data.map((element) => (
           <a href={`.../skitse/${element.id}`} key={element.id}>
@@ -40,7 +40,7 @@ const data = await response.json();
         ))
       }
       <KnapIndlaes id="load-more" />
-    </div>
+    </iv>
   </div>
 </Layout>
 
@@ -51,7 +51,7 @@ const data = await response.json();
   }
 
   .filtering {
-    width: 50px;
+    width: 110px;
     margin-left: 30px;
   }
 
