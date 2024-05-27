@@ -2,50 +2,65 @@
 
 ---
 
-<h3>Filter:</h3>
-<hr />
 <div class="filter-menu">
-  <div class="filter-item">
-    <button class="filter-title">Kunstner</button>
-    <div class="filter-content">
-      <label><input type="checkbox" name="artist1" /> Kunstner 1</label>
-      <label><input type="checkbox" name="artist2" /> Kunstner 2</label>
-      <label><input type="checkbox" name="artist3" /> Kunstner 3</label>
-    </div>
-  </div>
+  <h3>Filter:</h3>
   <hr />
-  <div class="filter-item">
-    <button class="filter-title">Pris</button>
-    <div class="filter-content">
-      <label><input type="checkbox" name="price1" /> Under 500 kr</label>
-      <label><input type="checkbox" name="price2" /> 500 - 1000 kr</label>
-      <label><input type="checkbox" name="price3" /> Over 1000 kr</label>
+  <div>
+    <div class="filter-item">
+      <button class="filter-title">Kunstner</button>
+      <div class="filter-content">
+        <label> Dyveke Bredsdorff</label>
+        <label>Pia Eikaas</label>
+        <label> Amalie Smith</label>
+        <label> Sofia Albina Novikoff</label>
+        <label>Anna Weber Henriksen</label>
+        <label>Rebecca Krasnik</label>
+        <label>Annarosa Krøyer Holm</label>
+        <label> Mo Maja Moesgaard</label>
+        <label> Arendse Krabbe</label>
+        <label>Fryd Frydendahl</label>
+        <label>Malene Landgreen</label>
+        <label>Nanna Riis Andersen</label>
+      </div>
     </div>
-  </div>
-  <hr />
-  <div class="filter-item">
-    <button class="filter-title">Størrelse</button>
-    <div class="filter-content">
-      <label><input type="checkbox" name="size1" /> Lille</label>
-      <label><input type="checkbox" name="size2" /> Mellem</label>
-      <label><input type="checkbox" name="size3" /> Stor</label>
+    <hr />
+    <div class="filter-item">
+      <button class="filter-title">Pris</button>
+      <div class="filter-content">
+        <label><input type="checkbox" name="price1" /> Under 500 kr</label>
+        <label><input type="checkbox" name="price2" /> 500 - 1000 kr</label>
+        <label><input type="checkbox" name="price3" /> Over 1000 kr</label>
+      </div>
     </div>
-  </div>
-  <hr />
-  <div class="filter-item">
-    <button class="filter-title" id="kategori">Kategori</button>
-    <div class="filter-content">
-      <label><input type="checkbox" name="category1" /> Maleri</label>
-      <label><input type="checkbox" name="category2" /> Skulptur</label>
-      <label><input type="checkbox" name="category3" /> Tegning</label>
+    <hr />
+    <div class="filter-item">
+      <button class="filter-title">Størrelse</button>
+      <div class="filter-content">
+        <label><input type="checkbox" name="size1" /> Lille</label>
+        <label><input type="checkbox" name="size2" /> Mellem</label>
+        <label><input type="checkbox" name="size3" /> Stor</label>
+      </div>
     </div>
+    <hr />
+    <div class="filter-item">
+      <button class="filter-title" id="kategori">Kategori</button>
+      <div class="filter-content">
+        <label><input type="checkbox" name="category1" /> Maleri</label>
+        <label><input type="checkbox" name="category2" /> Skulptur</label>
+        <label><input type="checkbox" name="category3" /> Tegning</label>
+      </div>
+    </div>
+    <hr />
   </div>
-  <hr />
 </div>
 
 <style>
   .filter-menu {
     margin: 0 auto;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0 0 0;
   }
 
   .filter-item {
@@ -53,15 +68,15 @@
   }
 
   .filter-title {
-    background-color: #fffbf6;
+    background-color: transparent;
     color: #667183;
-    padding: 10px 0 10px 0;
+    padding: 20px 0 20px 0;
     text-align: left;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
     font-family: "Inter", sans-serif;
-    width: 300px;
+    width: 600px;
     font-size: 15px;
     border: none;
   }
@@ -71,20 +86,27 @@
   }
 
   .filter-content {
-    display: none;
-    padding: 10px;
+    display: none; /* Ensure filter content is hidden by default */
     font-family: "Inter", sans-serif;
     border-top: none;
+    font-size: 12px;
+  }
+
+  .filter-content label:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }
 
   .filter-content label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
   }
+
   h3 {
     font-family: "Inter", sans-serif;
     color: #293750;
   }
+
   .filter-content label {
     color: #293750;
   }
@@ -106,11 +128,11 @@
       title.addEventListener("click", function () {
         const content = this.nextElementSibling;
         const isOpen = content.style.display === "block";
-        document
-          .querySelectorAll(".filter-content")
-          .forEach((item) => (item.style.display = "none"));
+        document.querySelectorAll(".filter-content").forEach((item) => {
+          (item as HTMLElement).style.display = "none";
+        });
         if (!isOpen) {
-          content.style.display = "block";
+          (content as HTMLElement).style.display = "block";
         }
       });
     });
