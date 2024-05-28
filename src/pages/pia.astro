@@ -1,0 +1,79 @@
+---
+import Layout from "../Layout.astro";
+import CardSkitse from "../components/Card_skitse.astro";
+import Filtrering_skitse from "../components/Filtrering_skitse.astro";
+//import Toppen from "../components/Toppen.astro";
+
+const response = await fetch(
+  "https://edmdwdbbleydenvducsr.supabase.co/rest/v1/skitse",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkbWR3ZGJibGV5ZGVudmR1Y3NyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MTk3MDQsImV4cCI6MjAzMTE5NTcwNH0.FuI_0k2FhT6bryNsIK2YrNwfo_XJGqVMm9bbVrtxHrU",
+    },
+  }
+);
+const data = await response.json();
+---
+
+<Layout>
+  <h1>Skitser</h1>
+
+  <div class="grid_1_1">
+    <div class="filtering">
+      <Filtrering_skitse />
+    </div>
+    <div class="skitse">
+      {
+        data.map((element) => {
+          if (element.kunstner === "Pia Eikaas") {
+            return (
+              <a href={`.../skitse/${element.id}`}>
+                <CardSkitse
+                  kunstner={element.kunstner}
+                  skitseimg={element.skitseimg}
+                  maal={element.maal}
+                  pris={element.pris}
+                  id={element.id}
+                />
+              </a>
+            );
+          }
+        })
+      }
+    </div>
+  </div>
+
+  <style>
+    h1 {
+      padding-bottom: 40px;
+      font-family: "Paytone One", sans-serif;
+    }
+
+    .filtering {
+      width: 110px;
+      margin-left: 30px;
+    }
+
+    .grid_1_1 {
+      display: grid;
+      grid-template-columns: 0.25fr 1fr;
+    }
+
+    .skitse {
+      margin-top: 25px;
+    }
+
+    @media (min-width: 800px) {
+      .skitse {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-items: center;
+        gap: 70px;
+        margin-right: 20px;
+      }
+    }
+  </style>
+</Layout>

@@ -25,23 +25,7 @@ const data = await response.json();
     <div class="filtering">
       <Filtrering_skitse />
     </div>
-    <iv class="skitse">
-      <!-- {
-        data.map((element) => {
-          // if (element.kunstner === "Dyveke Bredsdorff") {
-          return (
-            <a href={`.../skitse/${element.id}`}>
-              <CardSkitse
-                kunstner={element.kunstner}
-                maal={element.maal}
-                pris={element.pris}
-                id={element.id}
-              />
-            </a>
-          );
-          // }
-        })
-      } -->
+    <div class="skitse">
       {
         data.map((element) => (
           // <a href={`.../skitse/${element.id}`}>
@@ -55,21 +39,9 @@ const data = await response.json();
           // </a>
         ))
       }
-      <!-- {
-        data.map((element) => (
-          <a href={`.../skitse/${element.id}`}>
-            <CardSkitse
-              kunstner={element.kunstner}
-              skitseimg={element.skitseimg}
-              maal={element.maal}
-              pris={element.pris}
-              id={element.id}
-            />
-          </a>
-        ))
-      } -->
+
       <KnapIndlaes id="load-more" />
-    </iv>
+    </div>
   </div>
 </Layout>
 
