@@ -3,13 +3,14 @@ import Layout from "../Layout.astro";
 ---
 
 <Layout>
+  <h1>Om Skitse</h1>
+
   <div class="grid_1_1_1">
     <div>
       <img class="behold1" src="medier/krudsedulle1.svg" alt="" />
       <img class="slet1" src="medier/krudsedulle2.svg" alt="" />
     </div>
     <div class="om_skitse">
-      <h1>Om Skitse</h1>
       <p>
         SKITSE er et indblik i kunstens verden, som man ikke får andre
         steder. Vi sælger kunstneres skitser, eksperimenter og forsøg, fordi vi
@@ -49,7 +50,7 @@ import Layout from "../Layout.astro";
       <div>
         <p>
           Ryesgade 5, tv. <br />2200 Kbh. N. <br /><br />
-          Åbningstider:
+           Åbningstider:
 
           <br />Onsdag - fredag kl 12-18 <br />Lørdag kl 11-15 <br /><br
           />Helligdage: lukket
@@ -88,6 +89,10 @@ import Layout from "../Layout.astro";
 </Layout>
 
 <style>
+  h1 {
+    font-family: "Paytone One", sans-serif;
+    padding-bottom: 40px;
+  }
   body {
     overflow-x: hidden;
   }
@@ -121,7 +126,6 @@ import Layout from "../Layout.astro";
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
   }
 
   .grid_1_1_1_galleri {
@@ -248,7 +252,6 @@ import Layout from "../Layout.astro";
     .grid_1_1_1 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      padding-top: 100px;
     }
     .grid_1_1_1 img {
       width: 70%;
