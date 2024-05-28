@@ -26,22 +26,34 @@ const data = await response.json();
       <Filtrering_skitse />
     </div>
     <iv class="skitse">
-      {
+      <!-- {
         data.map((element) => {
-          if (element.kunstner === "Dyveke Bredsdorff") {
-            return (
-              <a href={`.../skitse/${element.id}`}>
-                <CardSkitse
-                  kunstner={element.kunstner}
-                  skitseimg={element.skitseimg}
-                  maal={element.maal}
-                  pris={element.pris}
-                  id={element.id}
-                />
-              </a>
-            );
-          }
+          // if (element.kunstner === "Dyveke Bredsdorff") {
+          return (
+            <a href={`.../skitse/${element.id}`}>
+              <CardSkitse
+                kunstner={element.kunstner}
+                maal={element.maal}
+                pris={element.pris}
+                id={element.id}
+              />
+            </a>
+          );
+          // }
         })
+      } -->
+      {
+        data.map((element) => (
+          // <a href={`.../skitse/${element.id}`}>
+          <CardSkitse
+            kunstner={element.kunstner}
+            skitseimg={element.skitseimg}
+            maal={element.maal}
+            pris={element.pris}
+            id={element.id}
+          />
+          // </a>
+        ))
       }
       <!-- {
         data.map((element) => (
