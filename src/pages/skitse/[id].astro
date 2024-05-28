@@ -59,8 +59,8 @@ console.log(data);
         <img src="/medier/gemt1.webp" alt="likede billeder" class="main_img" />
         <img src="/medier/hjerte.webp" alt="hjerte" class="heart_img" />
       </div>
-      <p>Peter Vos Knude</p>
-      <div class="info">
+      <h3>Peter Vos Knude</h3>
+      <div class="info_gemte">
         <p class="størrelse">29,6 x 42 cm</p>
         <p class="pris">2.499 kr</p>
       </div>
@@ -74,8 +74,8 @@ console.log(data);
         <img src="/medier/gemt2.webp" alt="likede billeder" class="main_img" />
         <img src="/medier/hjerte.webp" alt="hjerte" class="heart_img" />
       </div>
-      <p>Agnete Bertram</p>
-      <div class="info">
+      <h3>Agnete Bertram</h3>
+      <div class="info_gemte">
         <p class="størrelse">37 x 29 cm</p>
         <p class="pris">2.499 kr</p>
       </div>
@@ -89,8 +89,8 @@ console.log(data);
         <img src="/medier/gemt3.webp" alt="likede billeder" class="main_img" />
         <img src="/medier/hjerte.webp" alt="hjerte" class="heart_img" />
       </div>
-      <p>Peter Vos Knude</p>
-      <div class="info">
+      <h3>Peter Vos Knude</h3>
+      <div class="info_gemte">
         <p class="størrelse">20,9 x 29,6 cm</p>
         <p class="pris">2.499 kr</p>
       </div>
@@ -152,11 +152,19 @@ console.log(data);
 
   .info {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    max-width: 300px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     text-decoration: none;
-    padding-bottom: 20px;
+  }
+
+  .info_gemte {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+  }
+
+  .gemte {
+    margin-bottom: 50px;
   }
 
   .pris {

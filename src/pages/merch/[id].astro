@@ -40,65 +40,64 @@ console.log(data);
         <div class="info">
           <h2 class="kunstner_merch">{data.kunstner}</h2>
           <h2 class="navn_merch">{data.navn}</h2>
-          <h2 class="maal_merch">{data.maal}</h2>
           <h3 class="varenummer_merch">{data.varenummer}</h3>
+          <p class="kunstner_materiale">{data.materiale}</p>
 
           <h3 class="pris_merch">{data.pris}</h3>
 
           <KnapKurv />
         </div>
-        <p class="beskrivelse">{data.beskrivelse}</p>
+        <div class="beskrivelse"></div>
       </div>
     </div>
   </article>
-</Layout>
 
-<style>
-  img {
-    width: 300px;
-    height: auto;
-    margin-top: 100px;
-  }
-
-  .pris_merch {
-    color: var(--farve4);
-  }
-
-  .beskrivelse {
-    width: 500px;
-  }
-
-  .singleview {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrerer vertikalt */
-  }
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  @media (max-width: 800px) {
-    .info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
-  @media (min-width: 800px) {
-    .singleview {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 50px;
-    }
-
+  <style>
     img {
-      max-width: 500px;
+      width: 300px;
       height: auto;
       margin-top: 100px;
     }
-  }
-</style>
+
+    .pris_merch {
+      color: var(--farve4);
+    }
+
+    .singleview {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centrerer vertikalt */
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+      }
+    }
+
+    @media (min-width: 800px) {
+      .singleview {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+      }
+
+      img {
+        max-width: 500px;
+        height: auto;
+        margin-top: 100px;
+      }
+    }
+  </style>
+</Layout>
