@@ -28,21 +28,20 @@ const data = await response.json();
     <div class="skitse">
       {
         data.map((element) => (
-          // <a href={`.../skitse/${element.id}`}>
-          <CardSkitse
-            kunstner={element.kunstner}
-            skitseimg={element.skitseimg}
-            maal={element.maal}
-            pris={element.pris}
-            id={element.id}
-          />
-          // </a>
+          <a href={`.../skitse/${element.id}`}>
+            <CardSkitse
+              kunstner={element.kunstner}
+              skitseimg={element.skitseimg}
+              maal={element.maal}
+              pris={element.pris}
+              id={element.id}
+            />
+          </a>
         ))
       }
-
-      <KnapIndlaes id="load-more" />
     </div>
   </div>
+  <KnapIndlaes id="load-more" />
 </Layout>
 
 <style>
@@ -76,34 +75,3 @@ const data = await response.json();
     }
   }
 </style>
-
-<!-- <script>
-data.slice(0, 12).map((element) =>)
-
-  document.addEventListener("DOMContentLoaded", () => {
-    let loadMoreBtn = document.querySelector("#load-more") as HTMLButtonElement;
-    if (loadMoreBtn !== null) {
-      let currentItem = 12;
-
-      loadMoreBtn.onclick = () => {
-        console.log("Button clicked"); // Tjek om denne besked vises i konsollen
-
-        let boxes = document.querySelectorAll(".skitse > *");
-
-        for (
-          let i = currentItem;
-          i < currentItem + 12 && i < boxes.length;
-          i++
-        ) {
-          (boxes[i] as HTMLElement).style.display = "inline-block";
-        }
-
-        currentItem += 12;
-
-        if (currentItem >= boxes.length) {
-          loadMoreBtn.style.display = "none";
-        }
-      };
-    }
-  });
-</script> -->
